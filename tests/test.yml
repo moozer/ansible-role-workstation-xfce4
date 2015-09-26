@@ -1,0 +1,7 @@
+# test provisioning corresponding to the Vagrantfile
+
+- hosts: routers
+  sudo: yes
+
+  roles:
+  - workstation-xfce4
