@@ -1,0 +1,9 @@
+# xfce related packages
+
+- name: installing xfce4 related packages
+  apt: name={{ item }} state=latest update_cache=yes
+  with_items:
+  - xfce4
+  - xrdp
+  - xfce4-goodies
+  tags: apt
