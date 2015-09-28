@@ -1,6 +1,6 @@
 # test provisioning corresponding to the Vagrantfile
 
-- hosts: routers
+- hosts: all
   sudo: yes
 
   roles:
