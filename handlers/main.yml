@@ -1,2 +1,5 @@
 ---
 # handlers file for workstation-xfce4
+
+- name: restart network-manager
+  service: name=network-manager state=restarted
