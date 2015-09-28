@@ -1,2 +1,6 @@
 ---
 # tasks file for workstation-xfce4
+
+- include: apt-xfce4.yml
+- include: network-manager.yml
+
