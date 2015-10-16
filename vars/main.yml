@@ -3,3 +3,6 @@
 
 # install network manager applet and plugins
 include_nm: true
+
+# adminstrative packages - probably not safe :-)
+include_admin_packages: false

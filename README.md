@@ -3,6 +3,16 @@ Role Name
 
 A brief description of the role goes here.
 
+
+FIXME
+-----
+
+* scrolling doesn't work
+* libvirt issues with itnerfaces
+
+with include_admin_packages
+* wireshark access to sniffing
+
 Requirements
 ------------
 
@@ -25,7 +35,9 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - { role: workstation-xfce4, include_admin_packages: true }
+         
+         
 
 License
 -------

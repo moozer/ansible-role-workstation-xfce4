@@ -4,3 +4,17 @@
 - include: apt-xfce4.yml
 - include: network-manager.yml
 
+- name: installing other packages
+  apt: name={{ item }} state=latest update_cache=yes
+  with_items:
+  - iceweasel
+  tags: apt
+  
+- name: installing admin packages
+  apt: name={{ item }} state=latest update_cache=yes
+  with_items:
+  - wireshark
+  - tcpdump
+  tags: apt
+  when: include_admin_packages
+  

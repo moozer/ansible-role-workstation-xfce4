@@ -8,6 +8,7 @@
   - network-manager-openconnect-gnome
   - network-manager-openvpn-gnome
   - network-manager-pptp-gnome
+  - strongswan-nm
   tags: nm
   notify: restart network-manager
   when: include_nm
