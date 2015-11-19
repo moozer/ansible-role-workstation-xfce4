@@ -12,10 +12,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider :libvirt do |libvirt|
     libvirt.host = ""
     libvirt.nested = false
+    libvirt.memory = 2048
   end
 
-  config.vm.synced_folder ".", "/vagrant", type: "9p"
-
+  config.vm.synced_folder './', '/vagrant', type: '9p', disabled: false, accessmode: "squash", owner: "vagrant"
 
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "test.yml"
