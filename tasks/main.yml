@@ -8,6 +8,7 @@
   apt: name={{ item }} state=latest update_cache=yes
   with_items:
   - iceweasel
+  - git
   tags: apt
   
 - name: installing admin packages
@@ -15,6 +16,7 @@
   with_items:
   - wireshark
   - tcpdump
+  - curl
   tags: apt
   when: include_admin_packages
   
