@@ -4,4 +4,4 @@
   sudo: yes
 
   roles:
-  - {{ role: workstation-xfce4, include_admin_packages: true }} 
+  - { role: workstation-xfce4, include_admin_packages: true } 
