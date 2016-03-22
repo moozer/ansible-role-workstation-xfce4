@@ -11,7 +11,7 @@ include_admin_packages: false
 include_xfce4: true
 
 # flash is bad, but very used
-include_flash: false
+include_flash: true
 
 # add repos to sources.list.d
 manage_apt: true

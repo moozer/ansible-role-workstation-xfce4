@@ -1,22 +1,7 @@
 ---
 # tasks file for workstation-xfce4
 
+- include: apt-config.yml
 - include: apt-xfce4.yml
 - include: network-manager.yml
-
-- name: installing other packages
-  apt: name={{ item }} state=latest
-  with_items:
-  - iceweasel
-  - git
-  tags: apt
-  
-- name: installing admin packages
-  apt: name={{ item }} state=latest
-  with_items:
-  - wireshark
-  - tcpdump
-  - curl
-  tags: apt
-  when: include_admin_packages
-  
+- include: install-bundles.yml
