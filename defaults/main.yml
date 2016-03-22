@@ -6,3 +6,6 @@ include_nm: true
 
 # adminstrative packages - probably not safe :-)
 include_admin_packages: false
+
+# just to enable not installing xfce
+include_xfce4: true
