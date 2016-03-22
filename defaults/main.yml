@@ -9,3 +9,10 @@ include_admin_packages: false
 
 # just to enable not installing xfce
 include_xfce4: true
+
+# flash is bad, but very used
+include_flash: false
+
+# add repos to sources.list.d
+manage_apt: true
+apt_release: jessie
