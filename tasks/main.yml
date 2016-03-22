@@ -5,14 +5,14 @@
 - include: network-manager.yml
 
 - name: installing other packages
-  apt: name={{ item }} state=latest update_cache=yes
+  apt: name={{ item }} state=latest
   with_items:
   - iceweasel
   - git
   tags: apt
   
 - name: installing admin packages
-  apt: name={{ item }} state=latest update_cache=yes
+  apt: name={{ item }} state=latest
   with_items:
   - wireshark
   - tcpdump

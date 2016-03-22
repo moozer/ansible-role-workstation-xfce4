@@ -1,7 +1,7 @@
 # network manager related packages
 
 - name: installing network-manager related packages
-  apt: name={{ item }} state=latest update_cache=yes
+  apt: name={{ item }} state=latest
   with_items:
   - network-manager
   - network-manager-gnome
