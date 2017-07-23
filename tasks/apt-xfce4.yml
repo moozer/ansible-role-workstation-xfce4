@@ -1,9 +1,21 @@
 # xfce related packages
 
+- name: Set release to testing
+  set_fact:
+    default_release: "{{ apt_current_testing }}"
+  when: install_xfce_from_testing
+
+- name: Set release to stable
+  set_fact:
+    default_release: "{{ apt_current_stable }}"
+  when: not install_xfce_from_testing
+
 - name: installing xfce4 related packages
-  apt: name={{ item }} state=latest update_cache=yes
+  apt:
+    name: "{{ item }}"
+    state: latest
+    default_release: "{{ default_release}}"
   with_items:
   - task-xfce-desktop
   - xrdp
   - xfce4-goodies
-  tags: apt

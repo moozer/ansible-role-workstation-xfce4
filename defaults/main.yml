@@ -6,3 +6,6 @@ include_nm: true
 
 # adminstrative packages - probably not safe :-)
 include_admin_packages: false
+
+# testing has the latest version
+install_xfce_from_testing: false
