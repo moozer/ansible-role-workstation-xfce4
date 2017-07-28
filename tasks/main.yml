@@ -1,6 +1,5 @@
 ---
 # tasks file for workstation-xfce4
-
 - include: apt-xfce4.yml
   tags:
   - apt
@@ -8,28 +7,10 @@
 
 - include: network-manager.yml
 
-- name: installing other packages
-  apt: name={{ item }} state=present
-  with_items:
-  - iceweasel
-  - git
-  tags: apt
-
-- name: installing admin packages
-  apt: name={{ item }} state=present
-  with_items:
-  - wireshark
-  - tcpdump
-  - curl
-  tags: apt
-  when: include_admin_packages
-
-- name: tweaking default xfce keybindings
-  copy: src=xfce4-keyboard-shortcuts.xml dest=/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
-  tags: wm
-
 # to enable ldap logins
 - name: install account services
   apt: name={{ item }} state=present
   with_items:
   - libaccountsservice0
+
+- include: install-bundles.yml

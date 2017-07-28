@@ -15,8 +15,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     libvirt.memory = 2048
   end
 
-  config.vm.synced_folder './', '/vagrant', type: '9p', disabled: false, accessmode: "squash", owner: "vagrant"
+#  config.vm.synced_folder './', '/vagrant', type: '9p', disabled: false, accessmode: "squash", owner: "vagrant"
+  config.vm.synced_folder ".", "/vagrant", type: "nfs", nfs_version: 4, nfs_udp: false
 
+  config.vm.provision :shell,
+      inline: "apt-get update"
+      
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "test.yml"
 #    ansible.inventory_path = "inventory"
@@ -25,5 +29,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 #      "servers" => ["ipsclient", "ipsserver"]
 #    }
   end
-  
+
 end

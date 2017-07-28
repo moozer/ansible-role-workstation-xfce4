@@ -1,5 +1,4 @@
 # xfce related packages
-
 - name: Set release to testing
   set_fact:
     default_release: "{{ apt_current_testing }}"
@@ -19,3 +18,9 @@
   - task-xfce-desktop
   - xrdp
   - xfce4-goodies
+  when: include_xfce4
+  tags: apt
+
+- name: tweaking default xfce keybindings
+  template: src=xfce4-keyboard-shortcuts.xml.j2 dest=/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+  tags: wm
