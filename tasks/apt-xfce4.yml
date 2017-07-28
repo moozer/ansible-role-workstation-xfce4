@@ -13,7 +13,7 @@
 - name: installing xfce4 related packages
   apt:
     name: "{{ item }}"
-    state: latest
+    state: present
     default_release: "{{ default_release}}"
   with_items:
   - task-xfce-desktop

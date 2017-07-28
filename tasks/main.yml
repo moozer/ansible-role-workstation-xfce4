@@ -5,18 +5,18 @@
   tags:
   - apt
   - xfce4
-  
+
 - include: network-manager.yml
 
 - name: installing other packages
-  apt: name={{ item }} state=latest
+  apt: name={{ item }} state=present
   with_items:
   - iceweasel
   - git
   tags: apt
 
 - name: installing admin packages
-  apt: name={{ item }} state=latest
+  apt: name={{ item }} state=present
   with_items:
   - wireshark
   - tcpdump
@@ -30,6 +30,6 @@
 
 # to enable ldap logins
 - name: install account services
-  apt: name={{ item }} state=latest update_cache=yes
+  apt: name={{ item }} state=present
   with_items:
   - libaccountsservice0
