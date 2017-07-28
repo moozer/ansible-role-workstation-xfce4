@@ -13,8 +13,7 @@ install_xfce_from_testing: false
 # just to enable not installing xfce
 include_xfce4: true
 
-# flash is bad, but very used
-include_flash: true
-
 apt_current_stable: jessie
 apt_current_testing: testing
+
+install_xrdp: true

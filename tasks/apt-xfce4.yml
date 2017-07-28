@@ -16,7 +16,6 @@
     default_release: "{{ default_release}}"
   with_items:
   - task-xfce-desktop
-  - xrdp
   - xfce4-goodies
   when: include_xfce4
   tags: apt
@@ -24,3 +23,10 @@
 - name: tweaking default xfce keybindings
   template: src=xfce4-keyboard-shortcuts.xml.j2 dest=/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
   tags: wm
+
+- name: installing xrdp
+  apt: name={{ item }} state=present
+  with_items:
+  - xrdp
+  tags: apt
+  when: install_xrdp
