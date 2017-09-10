@@ -30,3 +30,13 @@
   - xrdp
   tags: apt
   when: install_xrdp
+
+- name: update lightdm config file
+  template:
+    src: lightdm.conf.j2
+    dest: /etc/lightdm/lightdm.conf
+    mode: 0644
+    owner: root
+    group: root
+  when: include_xfce4
+  notify: restart lightdm
