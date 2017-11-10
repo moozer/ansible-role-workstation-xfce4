@@ -1,6 +1,6 @@
 Role Name
 =========
-![https://travis-ci.org/moozer/ansible-role-workstation-xfce4.svg?branch=master](awesome buildinfo)
+![https://travis-ci.org/moozer/ansible-role-workstation-xfce4.svg?branch=master](buildinfo)
 [more info](https://travis-ci.org/moozer/ansible-role-workstation-xfce4)
 
 
