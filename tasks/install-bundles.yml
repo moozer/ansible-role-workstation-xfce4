@@ -1,22 +1,22 @@
 # installation of grouped items
 
 - name: installing other packages
-  apt: name={{ item }} state=latest
+  apt: name={{ item }} state=present
   with_items:
   - iceweasel
   - git
   tags: apt
-  
+
 - name: installing admin packages
-  apt: name={{ item }} state=latest
+  apt: name={{ item }} state=present
   with_items:
   - wireshark
   - tcpdump
   - curl
   tags: apt
   when: include_admin_packages
-  
+
 - name: installing flash
-  apt: name=flashplugin-nonfree state=latest
+  apt: name=flashplugin-nonfree state=present
   tags: apt
   when: include_flash

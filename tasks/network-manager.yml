@@ -1,7 +1,7 @@
 # network manager related packages
 
 - name: installing network-manager related packages
-  apt: name={{ item }} state=latest
+  apt: name={{ item }} state=present
   with_items:
   - network-manager
   - network-manager-gnome
@@ -9,6 +9,4 @@
   - network-manager-openvpn-gnome
   - network-manager-pptp-gnome
   - strongswan-nm
-  tags: nm
   notify: restart network-manager
-  when: include_nm

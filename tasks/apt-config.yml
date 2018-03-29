@@ -13,7 +13,7 @@
 - name: remove old source.list file
   file: path=/etc/apt/sources.list state=absent
   tags: apt
-  when: manage_apt  
+  when: manage_apt
 
 - name: updating package list
   apt: update_cache=yes cache_valid_time=3600

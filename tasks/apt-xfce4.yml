@@ -1,9 +1,4 @@
 # xfce related packages
-
-- name: updating package list
-  apt: update_cache=yes cache_valid_time=3600
-  tags: apt
-
 - name: installing xfce4 related packages
   apt: name={{ item }} state=latest
   with_items:
@@ -15,4 +10,4 @@
 
 - name: tweaking default xfce keybindings
   template: src=xfce4-keyboard-shortcuts.xml.j2 dest=/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
-  tags: wm  
+  tags: wm
