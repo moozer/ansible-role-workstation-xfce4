@@ -35,6 +35,7 @@ SCRIPT
 
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "test.yml"
+    ansible.compatibility_mode = "2.0"
 #    ansible.inventory_path = "inventory"
 #    ansible.groups = {
 #      "routers" => ["ipsrouter"],
