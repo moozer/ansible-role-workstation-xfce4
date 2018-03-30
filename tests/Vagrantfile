@@ -26,13 +26,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 #  config.vm.synced_folder './', '/vagrant', type: '9p', disabled: false, accessmode: "squash", owner: "vagrant"
   config.vm.synced_folder ".", "/vagrant", type: "nfs", nfs_version: 4, nfs_udp: false, disabled: true
 
-  $script = <<SCRIPT
-apt-get update
-apt-get upgrade
-SCRIPT
-#
-#  config.vm.provision "shell", inline: $script
-
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "test.yml"
     ansible.compatibility_mode = "2.0"

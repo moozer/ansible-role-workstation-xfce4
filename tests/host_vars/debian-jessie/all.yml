@@ -1,1 +1,2 @@
-apt_release: jessie
+apt_current_stable: jessie
+apt_current_testing: stretch

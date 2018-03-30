@@ -1,10 +1,18 @@
 ---
 # tasks file for workstation-xfce4
-
 - include_tasks: apt-xfce4.yml
+  tags:
+  - apt
+  - xfce4
 
 - include_tasks: network-manager.yml
   tags: nm
   when: include_nm
 
 - include_tasks: install-bundles.yml
+
+# to enable ldap logins
+- name: install account services
+  apt: name={{ item }} state=present
+  with_items:
+  - libaccountsservice0

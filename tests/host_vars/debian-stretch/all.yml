@@ -1,1 +1,2 @@
-apt_release: stretch
+apt_current_stable: stretch
+apt_current_testing: buster
