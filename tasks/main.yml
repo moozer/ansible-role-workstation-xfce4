@@ -1,11 +1,10 @@
 ---
 # tasks file for workstation-xfce4
 
-- include-tasks: apt-config.yml
-- include-tasks: apt-xfce4.yml
+- include_tasks: apt-xfce4.yml
 
-- include-tasks: network-manager.yml
+- include_tasks: network-manager.yml
   tags: nm
   when: include_nm
 
-- include-tasks: install-bundles.yml
+- include_tasks: install-bundles.yml
