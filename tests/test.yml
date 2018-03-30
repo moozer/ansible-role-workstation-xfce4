@@ -11,7 +11,7 @@
     - name: install apt sources
       apt_repository: repo='{{ item }}' state=present
       with_items:
-      - "deb http://cdn.debian.net/debian/ {{ apt_release }} main non-free contrib"
+      - "deb http://cdn.debian.net/debian/ {{ apt_current_stable }} main non-free contrib"
       tags: apt
 
     - name: update apt and dist upgrade

@@ -18,5 +18,5 @@ install_xrdp: true
 include_flash: false
 
 # release versions
-apt_current_stable: jessie
-apt_current_testing: testing
+apt_current_stable: stretch
+apt_current_testing: buster
