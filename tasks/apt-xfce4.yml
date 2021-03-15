@@ -1,22 +1,18 @@
 # xfce related packages
-- name: Set release to testing
-  set_fact:
-    default_release: "{{ apt_current_testing }}"
-  when: install_xfce_from_testing
+# - name: Set release to testing
+#   set_fact:
+#     default_release: "{{ apt_current_testing }}"
+#   when: install_xfce_from_testing
 
-- name: Set release to stable
-  set_fact:
-    default_release: "{{ apt_current_stable }}"
-  when: not install_xfce_from_testing
+# - name: Set release to stable
+#   set_fact:
+#     default_release: "{{ apt_current_stable }}"
+#   when: not install_xfce_from_testing
 
 - name: installing xfce4 related packages
   apt:
-    name: "{{ item }}"
+    name:  [task-xfce-desktop, xfce4-goodies]
     state: present
-    default_release: "{{ default_release}}"
-  with_items:
-  - task-xfce-desktop
-  - xfce4-goodies
   when: include_xfce4
   tags: apt
 

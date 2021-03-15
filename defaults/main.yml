@@ -8,7 +8,7 @@ include_nm: true
 include_admin_packages: false
 
 # testing has the latest version
-install_xfce_from_testing: false
+# install_xfce_from_testing: false
 
 # just to enable not installing xfce
 include_xfce4: true
