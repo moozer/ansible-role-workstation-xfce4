@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  name: workstation_xfce4
   author: moozer
   description: reole for installing xfce4 and related packages
   #company: your company (optional

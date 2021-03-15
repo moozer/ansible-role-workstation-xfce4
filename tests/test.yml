@@ -5,7 +5,7 @@
   become_method: sudo
 
   roles:
-  - { role: workstation-xfce4, include_admin_packages: true }
+  - { role: workstation_xfce4, include_admin_packages: true }
 
   pre_tasks:
     - name: install apt sources
